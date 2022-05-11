@@ -15,7 +15,7 @@ namespace OblicznieFigur
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine(">>>>>>>> Wybierz Figurę <<<<<<<<");
+                Console.WriteLine(">>>>>>>> Wybierz Figurę do obliczenia <<<<<<<<");
                 Console.WriteLine("1 - Trójkąt");
                 Console.WriteLine("2 - Kwadrat");
                 Console.WriteLine("3 - Prostokąt");
