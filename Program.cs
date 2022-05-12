@@ -1,451 +1,615 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
+using static System.Double;
 
-namespace OblicznieFigur
+
+namespace Obliczanie_figur;
+
+internal static class MenuProgramu
 {
-    static class MenuProgramu
-    {
     
-        public static void Main()
-        {
-            Console.Title = "Oblicznie Figur";
+    public static void Main()
+    {
+        Console.Title = "Oblicznie Figur";
 
-            while (true)
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine(">>>>>>>> Wybierz Figurę <<<<<<<<");
+            Console.WriteLine("1 - Trójkąt");
+            Console.WriteLine("2 - Kwadrat");
+            Console.WriteLine("3 - Prostokąt");
+            Console.WriteLine("4 - Koło ");
+            Console.WriteLine("5 - Trapez ");
+            Console.WriteLine("6 - Zakończ");
+
+            ConsoleKeyInfo Klawisz = Console.ReadKey();
+            if (Klawisz.Key is ConsoleKey.D1 or ConsoleKey.NumPad1)
             {
                 Console.Clear();
-                Console.WriteLine(">>>>>>>> Wybierz Figurę <<<<<<<<");
-                Console.WriteLine("1 - Trójkąt");
-                Console.WriteLine("2 - Kwadrat");
-                Console.WriteLine("3 - Prostokąt");
-                Console.WriteLine("4 - Koło ");
-                Console.WriteLine("5 - Trapez ");
-                Console.WriteLine("6 - Zakończ");
-
-                ConsoleKeyInfo Klawisz = Console.ReadKey();
-                switch (Klawisz.Key)
-                {
-
-                    case ConsoleKey.D1:
-                    case ConsoleKey.NumPad1:
-                        Console.Clear(); Trójkąt(); break;
-
-                    case ConsoleKey.D2:
-                    case ConsoleKey.NumPad2:
-                        Console.Clear(); Kwadrat(); break;
-
-                    case ConsoleKey.D3:
-                    case ConsoleKey.NumPad3:
-                        Console.Clear(); Prostokąt(); break;
-                    case ConsoleKey.D4:
-                    case ConsoleKey.NumPad4:
-                        Console.Clear(); Koło(); break;
-                    case ConsoleKey.D5:
-                    case ConsoleKey.NumPad5:
-                        Console.Clear(); Trapez(); break;
-                    case ConsoleKey.Escape:
-                    case ConsoleKey.D6:
-                    case ConsoleKey.NumPad6:
-                        Environment.Exit(0); break;
-                    default: break;
-
-                }
+                Trójkąt();
             }
-
-        }
-        static void Trójkąt()
-        {
-            while (true)
+            else if (Klawisz.Key is ConsoleKey.D2 or ConsoleKey.NumPad2)
             {
                 Console.Clear();
-                Console.WriteLine(">>>>>>>>>> Figura: Trójkąt <<<<<<<<<");
-                Console.WriteLine(">>>>>>>> Wybierz Obliczenia <<<<<<<<");
-                Console.WriteLine("1 - Pole");
-                Console.WriteLine("2 - Obwód");
-                Console.WriteLine("3 - Wstecz");
-               
-
-                ConsoleKeyInfo Klawisz = Console.ReadKey();
-                switch (Klawisz.Key)
-                {
-
-                    case ConsoleKey.D1:
-                    case ConsoleKey.NumPad1:
-                        Console.Clear(); PoleAH(); break;
-
-                    case ConsoleKey.D2:
-                    case ConsoleKey.NumPad2:
-                        Console.Clear(); ObwódABC(); break;
-
-                    case ConsoleKey.Escape:
-                    case ConsoleKey.D3:
-                    case ConsoleKey.NumPad3:
-                        Console.Clear(); Main(); break;
-                    default: break;
-
-                }
+                Kwadrat();
             }
-            static void PoleAH()
-            {
-
-
-
-                Console.WriteLine("Podaj Długość podstawy: ");
-                string a = Console.ReadLine();
-                double cyferka = 0;
-                bool cyferka1 = double.TryParse(a, out cyferka);
-
-
-                Console.WriteLine("Podaj wysokośc trójkąta: ");
-                string h = Console.ReadLine();
-                double cyferka2 = 0;
-                bool cyferka3 = double.TryParse(h, out cyferka2);
-
-                if (cyferka1 == true && cyferka3 == true)
-                {
-                    Console.OutputEncoding = Encoding.Unicode;
-                    Console.WriteLine("Pole wynosi " + (cyferka * cyferka2) / 2 + "cm\xB2");
-                }
-                else
-                    Console.WriteLine("Nie prawidłowy ciag znaków");
-                    
-
-                Console.ReadLine();
-            }
-
-            static void ObwódABC()
-            {
-                Console.WriteLine("Podaj długość boku a: ");
-                string a = Console.ReadLine();
-                double cyferka = 0;
-                bool cyferka1 = double.TryParse(a, out cyferka);
-
-                Console.WriteLine("Podaj długośc boku b: ");
-                string b = Console.ReadLine();
-                double cyferka2 = 0;
-                bool cyferka3 = double.TryParse(b, out cyferka2);
-
-
-                Console.WriteLine("Podaj długośc boku c: ");
-                string c = Console.ReadLine();
-                double cyferka4 = 0;
-                bool cyferka5 = double.TryParse(c, out cyferka4);
-
-                if (cyferka1 == true && cyferka3 == true && cyferka5 == true)
-                {
-                    Console.WriteLine("Obwód Trójkąta wynosi: " + (cyferka + cyferka2 + cyferka4) + "cm");
-                }
-                else
-                     Console.WriteLine("Nie prawidłowy ciąg znaków");
-                
-                Console.ReadLine();
-
-            }
-        }
-
-        static void Kwadrat()
-        {
-            while (true)
+            else if (Klawisz.Key is ConsoleKey.D3 or ConsoleKey.NumPad3)
             {
                 Console.Clear();
-                Console.WriteLine(">>>>>>>>> Figura: Kwadrat <<<<<<<<<<");
-                Console.WriteLine(">>>>>>>> Wybierz Oblicznie <<<<<<<<<");
-                Console.WriteLine("1 - Pole");
-                Console.WriteLine("2 - Obwód");
-                Console.WriteLine("3 - Wstecz");
-
-                ConsoleKeyInfo klawisz = Console.ReadKey();
-                switch (klawisz.Key)
-                {
-
-                    case ConsoleKey.D1:
-                    case ConsoleKey.NumPad1:
-                        Console.Clear(); PoleAA(); break;
-                    case ConsoleKey.D2:
-                    case ConsoleKey.NumPad2:
-                        Console.Clear(); ObwódAAAA(); break;
-                    case ConsoleKey.D3:
-                    case ConsoleKey.NumPad3:
-                    case ConsoleKey.Escape:
-                        Console.Clear(); Main(); break;
-                    default: break;
-                
-                }
+                Prostokąt();
             }
-
-            static void PoleAA()
+            else if (Klawisz.Key is ConsoleKey.D4 or ConsoleKey.NumPad4)
             {
-                Console.WriteLine("Podaj długość boku a: ");
-                string a = Console.ReadLine();
-                double cyferka = 0;
-                bool cyferka1 = double.TryParse(a, out cyferka);
-
-                if (cyferka1 == true)
-                {
-                    Console.OutputEncoding = Encoding.Unicode;
-                    Console.WriteLine("Pole kwadratu wynosi " + cyferka * cyferka + "cm\xB2");
-                }
-                else
-                    Console.WriteLine("Nie prawidłowy ciąg znaków");
-
-                Console.ReadLine();
+                Console.Clear();
+                Koło();
             }
-
-            static void ObwódAAAA()
+            else if (Klawisz.Key is ConsoleKey.D5 or ConsoleKey.NumPad5)
             {
-                Console.WriteLine("Podaj długość boku a: ");
-                string a = Console.ReadLine();
-                double cyferka = 0;
-                bool cyferka1 = double.TryParse(a, out cyferka);
-
-                if (cyferka1 == true)
-                {
-                    Console.WriteLine("Obwód kwadratu wynosi " + cyferka * 4 + "cm");
-                }
-                else
-                    Console.WriteLine("Nie prawidłowy ciąg znaków");
-
-                Console.ReadLine();
+                Console.Clear();
+                Trapez();
+            }
+            else if (Klawisz.Key is ConsoleKey.Escape or ConsoleKey.D6 or ConsoleKey.NumPad6)
+            {
+                Environment.Exit(0);
+            }
             
-            }
         }
+        // ReSharper disable once FunctionNeverReturns
+    }
 
-        static void Prostokąt()
+    private static void Trójkąt()
+    {
+        while (true)
         {
-            while (true)
+            Console.Clear();
+            Console.WriteLine(">>>>>>>>>> Figura: Trójkąt <<<<<<<<<");
+            Console.WriteLine(">>>>>>>> Wybierz Obliczenia <<<<<<<<");
+            Console.WriteLine("1 - Pole");
+            Console.WriteLine("2 - Obwód");
+            Console.WriteLine("3 - Wstecz");
+
+
+            ConsoleKeyInfo klawisz = Console.ReadKey();
+            if (klawisz.Key is ConsoleKey.D1 or ConsoleKey.NumPad1)
             {
                 Console.Clear();
-                Console.WriteLine(">>>>>>>> Figura: Prostokąt <<<<<<<<");
-                Console.WriteLine(">>>>>>>> Wybierz Oblicznia <<<<<<<<");
-                Console.WriteLine("1 - Pole");
-                Console.WriteLine("2 - Obwód");
-                Console.WriteLine("3 - Wstecz");
-                ConsoleKeyInfo klawisz = Console.ReadKey();
-                switch (klawisz.Key)
-                {
-                    case ConsoleKey.D1:
-                    case ConsoleKey.NumPad1:
-                        Console.Clear(); PoleAB(); break;
-                    case ConsoleKey.D2:
-                    case ConsoleKey.NumPad2:
-                        Console.Clear(); ObwódABAB(); break;
-                    case ConsoleKey.D3:
-                    case ConsoleKey.Escape:
-                    case ConsoleKey.NumPad3:
-                        Console.Clear(); Main(); break;
-                    default: break;
-                }
+                PoleAH();
             }
-
-            static void PoleAB()
+            else if (klawisz.Key is ConsoleKey.D2 or ConsoleKey.NumPad2)
             {
-                Console.WriteLine("Podaj długość boku a: ");
-                string a = Console.ReadLine();
-                double cyferka = 0;
-                bool cyferka1 = double.TryParse(a, out cyferka);
-
-                Console.WriteLine("Podaj długość boku b: ");
-                string b = Console.ReadLine();
-                double cyferka2 = 0;
-                bool cyferka3 = double.TryParse(b, out cyferka2);
-
-                if (cyferka1 == true && cyferka3 == true)
-                {
-                    Console.OutputEncoding = Encoding.Unicode;
-                    Console.WriteLine("Pole porostokątu wynosi " + cyferka * cyferka2 + "cm\xB2");
-                }
-                else
-                    Console.WriteLine("Nie prawidłowy ciąg znaków");
-
-
-                Console.ReadLine();
-
+                Console.Clear();
+                ObwódABC();
             }
-
-            static void ObwódABAB()
+            else if (klawisz.Key is ConsoleKey.D3 or ConsoleKey.NumPad3 or ConsoleKey.Escape)
             {
-                Console.WriteLine("Podaj długośc boku a: ");
-                string a = Console.ReadLine();
-                double cyferka = 0;
-                bool cyferka1 = double.TryParse(a, out cyferka);
-
-                Console.WriteLine("Podaj długość boku b: ");
-                string b = Console.ReadLine();
-                double cyferka2 = 0;
-                bool cyferka3 = double.TryParse(b, out cyferka2);
-
-                if (cyferka1 == true && cyferka3 == true)
+                Console.Clear();
+                Main();
+            }
+            else
+            {
+            }
+        }
+        static void PoleAH()
+        {
+            Console.WriteLine("Podaj długość boku a: ");
+            var isLenghtA = true;
+            var lengthA = 0.0;
+            do
+            {
+                var a = Console.ReadLine();
+                isLenghtA = TryParse(a, out lengthA);
+                if (!isLenghtA)
                 {
-                    Console.WriteLine("Obwód prostokatu wynowi " + (cyferka + cyferka + cyferka2 + cyferka2) + "cm");
+                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
                 }
-                else
-                    Console.WriteLine("Nie prawidłowy ciąg znaków");
+            } while (!isLenghtA);
+
+
+            Console.WriteLine("Podaj wysokość Trójkąta: ");
+            var isLenghtH = true;
+            var lenghtH = 0.0;
+            do
+            {
+                var b = Console.ReadLine();
+                isLenghtH = TryParse(b, out lenghtH);
+                if (!isLenghtH)
+                {
+                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                }
+            } while (!isLenghtH);
+
+            if (isLenghtA && isLenghtH)
+            {
+                Console.OutputEncoding = Encoding.Unicode;
+                Console.WriteLine("Pole wynosi " + (lengthA * lenghtH) / 2 + "cm\xB2");
+            }
+            else
+                Console.WriteLine("Nie prawidłowy ciag znaków");
+
+
+            Console.ReadLine();
+        }
+
+        static void ObwódABC()
+        {
+            Console.WriteLine("Podaj długość boku a: ");
+            var isLenghtA = true;
+            var lengthA = 0.0;
+            do
+            {
+                var a = Console.ReadLine();
+                isLenghtA = TryParse(a, out lengthA);
+                if (!isLenghtA)
+                {
+                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                }
+            } while (!isLenghtA);
+
+            Console.WriteLine("Podaj długośc boku b: ");
+            var isLenghtB = true;
+            var lenghtB = 0.0;
+            do
+            {
+                var b = Console.ReadLine();
+                isLenghtB = TryParse(b, out lenghtB);
+                if (!isLenghtB)
+                {
+                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                }
+            } while (!isLenghtB);
+
+            Console.WriteLine("Podaj długośc boku c: ");
+            var isLenghtC = true;
+            var lenghtC = 0.0;
+            do
+            {
+                var c = Console.ReadLine();
+                isLenghtC = TryParse(c, out lenghtC);
+
+                if (!isLenghtC)
+                {
+                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                }
+            } while (!isLenghtC);
+
+            if (isLenghtA && isLenghtB && isLenghtC)
+            {
+                Console.WriteLine("Obwód Trójkąta wynosi: " + (lenghtC + lenghtB + lengthA) + "cm");
+            }
+            else
+                Console.WriteLine("Nie prawidłowy ciąg znaków");
 
             Console.ReadLine();
 
-            }
         }
-        static void Koło()
+    }
+
+    private static void Kwadrat()
+    {
+        while (true)
         {
-            while (true)
+            Console.Clear();
+            Console.WriteLine(">>>>>>>>> Figura: Kwadrat <<<<<<<<<<");
+            Console.WriteLine(">>>>>>>> Wybierz Oblicznie <<<<<<<<<");
+            Console.WriteLine("1 - Pole");
+            Console.WriteLine("2 - Obwód");
+            Console.WriteLine("3 - Wstecz");
+
+            ConsoleKeyInfo klawisz = Console.ReadKey();
+            if (klawisz.Key is ConsoleKey.D1 or ConsoleKey.NumPad1)
             {
                 Console.Clear();
-                Console.WriteLine(">>>>>>>>>> Figura: koło <<<<<<<<<<<<");
-                Console.WriteLine(">>>>>>>> Wybierz Obliczenia <<<<<<<<");
-                Console.WriteLine("1 - Pole");
-                Console.WriteLine("2 - Obwód");
-                Console.WriteLine("3 - Wstecz");
-
-
-                ConsoleKeyInfo Klawisz = Console.ReadKey();
-                switch (Klawisz.Key)
-                {
-
-                    case ConsoleKey.D1:
-                    case ConsoleKey.NumPad1:
-                        Console.Clear(); PoleR(); break;
-
-                    case ConsoleKey.D2:
-                    case ConsoleKey.NumPad2:
-                        Console.Clear(); ObwódR(); break;
-
-                    case ConsoleKey.Escape:
-                    case ConsoleKey.D3:
-                    case ConsoleKey.NumPad3:
-                        Console.Clear(); Main(); break;
-                    default: break;
-
-                }
+                PoleAA();
             }
-            static void PoleR()
-            {
-                Console.WriteLine("Podaj długość promienia r: ");
-                string r = Console.ReadLine();
-                double cyferka = 0;
-                bool cyferka1 = double.TryParse(r, out cyferka);
-
-                if (cyferka1 == true)
-                {
-                    Console.OutputEncoding = Encoding.Unicode;
-                    Console.WriteLine("Pole koła wynosi " + 3.14 * cyferka + "cm\xB2");
-                }
-                else
-                    Console.WriteLine("Nie prawidłowy ciąg znaków");
-                Console.ReadLine();
-            }
-
-            static void ObwódR()
-            {
-                Console.WriteLine("Podaj długość promienia r: ");
-                string r = Console.ReadLine();
-                double cyferka = 0;
-                bool cyferka1 = double.TryParse(r, out cyferka);
-
-                if (cyferka1 == true)
-                {
-                    Console.WriteLine("Obwód Trójkąta wynosi: " + 2 * 3.14 * cyferka + "cm");
-                }
-                else
-                    Console.WriteLine("Nie prawidłowy ciąg znaków");
-
-                Console.ReadLine();
-
-            }
-
-
-
-
-
-        }
-        static void Trapez()
-        {
-            while (true)
+            else if (klawisz.Key is ConsoleKey.D2 or ConsoleKey.NumPad2)
             {
                 Console.Clear();
-                Console.WriteLine(">>>>>>>>> Figura: Trapez <<<<<<<<<<");
-                Console.WriteLine(">>>>>>>> Wybierz Oblicznia <<<<<<<<");
-                Console.WriteLine("1 - Pole");
-                Console.WriteLine("2 - Obwód");
-                Console.WriteLine("3 - Wstecz");
-                ConsoleKeyInfo klawisz = Console.ReadKey();
-                switch (klawisz.Key)
-                {
-                    case ConsoleKey.D1:
-                    case ConsoleKey.NumPad1:
-                        Console.Clear(); PoleABH(); break;
-                    case ConsoleKey.D2:
-                    case ConsoleKey.NumPad2:
-                        Console.Clear(); ObwódABC(); break;
-                    case ConsoleKey.D3:
-                    case ConsoleKey.Escape:
-                    case ConsoleKey.NumPad3:
-                        Console.Clear(); Main(); break;
-                    default: break;
-                }
-
-
+                ObwódAAAA();
             }
-            static void PoleABH()
+            else if (klawisz.Key is ConsoleKey.D3 or ConsoleKey.NumPad3 or ConsoleKey.Escape)
             {
-                Console.WriteLine("Podaj długość Boku a: ");
-                string a = Console.ReadLine();
-                double cyferka = 0;
-                bool cyferka1 = double.TryParse(a, out cyferka);
-
-
-                Console.WriteLine("POdaj długość boku b: ");
-                string b = Console.ReadLine();
-                double cyferka2 = 0;
-                bool cyferka3 = double.TryParse(b, out cyferka2);
-
-                Console.WriteLine("Podaj wysokość trapezu:  ");
-                string h = Console.ReadLine();
-                double cyferka4 = 0;
-                bool cyferka5 = double.TryParse(h, out cyferka4);
-
-                if (cyferka1 == true && cyferka3 == true && cyferka5 == true)
-                {
-                    Console.OutputEncoding = Encoding.Unicode;
-                    Console.WriteLine("Pole Trapezu wynosi " + ((cyferka + cyferka2) * cyferka4) / 2 + "cm\xB2");
-                }
-                else
-                    Console.WriteLine("Nie prawidłowy ciąg znaków");
-                Console.ReadLine();
-
-
+                Console.Clear();
+                Main();
             }
-
-            static void ObwódABC()
+            else
             {
-                Console.WriteLine("Podaj długość boku a: ");
-                string a = Console.ReadLine();
-                double cyferka = 0;
-                bool cyferka1 = double.TryParse(a, out cyferka);
-
-                Console.WriteLine("Podaj długośc boku b: ");
-                string b = Console.ReadLine();
-                double cyferka2 = 0;
-                bool cyferka3 = double.TryParse(b, out cyferka2);
-
-
-                Console.WriteLine("Podaj długośc boku c: ");
-                string c = Console.ReadLine();
-                double cyferka4 = 0;
-                bool cyferka5 = double.TryParse(c, out cyferka4); ;
-                if (cyferka1 == true && cyferka3 == true && cyferka5 == true)
-                {
-                    Console.WriteLine("Obwód trapezu wynosi " + ((cyferka + cyferka2) + cyferka4 * 2) + "cm");
-                }
-                else
-                    Console.WriteLine("Nie prawidłowy ciąg znaków");
-                Console.ReadLine();
-
-
             }
+        }
+
+        static void PoleAA()
+        {
+            Console.WriteLine("Podaj długość boku a: ");
+            var isLenghtA = true;
+            var lengthA = 0.0;
+            do
+            {
+                var a = Console.ReadLine();
+                isLenghtA = TryParse(a, out lengthA);
+                if (!isLenghtA)
+                {
+                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                }
+            } while (!isLenghtA);
+
+            if (isLenghtA)
+            {
+                Console.OutputEncoding = Encoding.Unicode;
+                Console.WriteLine("Pole kwadratu wynosi " + lengthA * lengthA + "cm\xB2");
+            }
+            else
+                Console.WriteLine("Nie prawidłowy ciąg znaków");
+
+            Console.ReadLine();
+        }
+
+        static void ObwódAAAA()
+        {
+            Console.WriteLine("Podaj długość boku a: ");
+            var isLenghtA = true;
+            var lengthA = 0.0;
+            do
+            {
+                var a = Console.ReadLine();
+                isLenghtA = TryParse(a, out lengthA);
+                if (!isLenghtA)
+                {
+                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                }
+            } while (!isLenghtA);
+
+            if (isLenghtA)
+            {
+                Console.WriteLine("Obwód kwadratu wynosi " + lengthA * 4 + "cm");
+            }
+            else
+                Console.WriteLine("Nie prawidłowy ciąg znaków");
+
+            Console.ReadLine();
+            
+        }
+    }
+
+    private static void Prostokąt()
+    {
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine(">>>>>>>> Figura: Prostokąt <<<<<<<<");
+            Console.WriteLine(">>>>>>>> Wybierz Oblicznia <<<<<<<<");
+            Console.WriteLine("1 - Pole");
+            Console.WriteLine("2 - Obwód");
+            Console.WriteLine("3 - Wstecz");
+            ConsoleKeyInfo klawisz = Console.ReadKey();
+            if (klawisz.Key is ConsoleKey.D1 or ConsoleKey.NumPad1)
+            {
+                Console.Clear();
+                PoleAB();
+            }
+            else if (klawisz.Key is ConsoleKey.D2 or ConsoleKey.NumPad2)
+            {
+                Console.Clear();
+                ObwódABAB();
+            }
+            else if (klawisz.Key is ConsoleKey.D3 or ConsoleKey.Escape or ConsoleKey.NumPad3)
+            {
+                Console.Clear();
+                Main();
+            }
+            else
+            {
+            }
+        }
+
+        static void PoleAB()
+        {
+            Console.WriteLine("Podaj długość boku a: ");
+            var isLenghtA = true;
+            var lengthA = 0.0;
+            do
+            {
+                var a = Console.ReadLine();
+                isLenghtA = TryParse(a, out lengthA);
+                if (!isLenghtA)
+                {
+                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                }
+            } while (!isLenghtA);
+
+            Console.WriteLine("Podaj długośc boku b: ");
+            var isLenghtB = true;
+            var lenghtB = 0.0;
+            do
+            {
+                var b = Console.ReadLine();
+                isLenghtB = TryParse(b, out lenghtB);
+                if (!isLenghtB)
+                {
+                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                }
+            } while (!isLenghtB);
+
+            if (isLenghtA && isLenghtB)
+            {
+                Console.OutputEncoding = Encoding.Unicode;
+                Console.WriteLine("Pole porostokątu wynosi " + lengthA * lenghtB + "cm\xB2");
+            }
+            else
+                Console.WriteLine("Nie prawidłowy ciąg znaków");
+
+
+            Console.ReadLine();
+
+        }
+
+        static void ObwódABAB()
+        {
+            Console.WriteLine("Podaj długość boku a: ");
+            var isLenghtA = true;
+            var lengthA = 0.0;
+            do
+            {
+                var a = Console.ReadLine();
+                isLenghtA = TryParse(a, out lengthA);
+                if (!isLenghtA)
+                {
+                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                }
+            } while (!isLenghtA);
+
+            Console.WriteLine("Podaj długośc boku b: ");
+            var isLenghtB = true;
+            var lenghtB = 0.0;
+            do
+            {
+                var b = Console.ReadLine();
+                isLenghtB = TryParse(b, out lenghtB);
+                if (!isLenghtB)
+                {
+                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                }
+            } while (!isLenghtB);
+
+            if (isLenghtA && isLenghtB)
+            {
+                Console.WriteLine("Obwód prostokatu wynowi " + (lengthA + lengthA + lenghtB + lenghtB) + "cm");
+            }
+            else
+                Console.WriteLine("Nie prawidłowy ciąg znaków");
+
+            Console.ReadLine();
+
+        }
+    }
+
+    private static void Koło()
+    {
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine(">>>>>>>>>> Figura: koło <<<<<<<<<<<<");
+            Console.WriteLine(">>>>>>>> Wybierz Obliczenia <<<<<<<<");
+            Console.WriteLine("1 - Pole");
+            Console.WriteLine("2 - Obwód");
+            Console.WriteLine("3 - Wstecz");
+
+
+            ConsoleKeyInfo Klawisz = Console.ReadKey();
+            if (Klawisz.Key is ConsoleKey.D1 or ConsoleKey.NumPad1)
+            {
+                Console.Clear();
+                PoleR();
+            }
+            else if (Klawisz.Key is ConsoleKey.D2 or ConsoleKey.NumPad2)
+            {
+                Console.Clear();
+                ObwódR();
+            }
+            else if (Klawisz.Key is ConsoleKey.Escape or ConsoleKey.D3 or ConsoleKey.NumPad3)
+            {
+                Console.Clear();
+                Main();
+            }
+            else
+            {
+            }
+        }
+        static void PoleR()
+        {
+            Console.WriteLine("Podaj długość boku a: ");
+            var isLenghtR = true;
+            var lengthR = 0.0;
+            do
+            {
+                var a = Console.ReadLine();
+                isLenghtR = TryParse(a, out lengthR);
+                if (!isLenghtR)
+                {
+                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                }
+            } while (!isLenghtR);
+
+            if (isLenghtR)
+            {
+                Console.OutputEncoding = Encoding.Unicode;
+                Console.WriteLine("Pole koła wynosi " + 3.14 * lengthR + "cm\xB2");
+            }
+            else
+                Console.WriteLine("Nie prawidłowy ciąg znaków");
+
+            Console.ReadLine();
+        }
+
+        static void ObwódR()
+        {
+            Console.WriteLine("Podaj długość boku a: ");
+            var isLenghtR = true;
+            var lengthR = 0.0;
+            do
+            {
+                var a = Console.ReadLine();
+                isLenghtR = TryParse(a, out lengthR);
+                if (!isLenghtR)
+                {
+                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                }
+            } while (!isLenghtR);
+
+            if (isLenghtR)
+            {
+                Console.WriteLine("Obwód Trójkąta wynosi: " + 2 * 3.14 * lengthR + "cm");
+            }
+            else
+                Console.WriteLine("Nie prawidłowy ciąg znaków");
+
+            Console.ReadLine();
+
+        }
+
+
+
+
+
+    }
+
+    private static void Trapez()
+    {
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine(">>>>>>>>> Figura: Trapez <<<<<<<<<<");
+            Console.WriteLine(">>>>>>>> Wybierz Oblicznia <<<<<<<<");
+            Console.WriteLine("1 - Pole");
+            Console.WriteLine("2 - Obwód");
+            Console.WriteLine("3 - Wstecz");
+            ConsoleKeyInfo klawisz = Console.ReadKey();
+            if (klawisz.Key is ConsoleKey.D1 or ConsoleKey.NumPad1)
+            {
+                Console.Clear();
+                PoleAbh();
+            }
+            else if (klawisz.Key is ConsoleKey.D2 or ConsoleKey.NumPad2)
+            {
+                Console.Clear();
+                ObwódABC();
+            }
+            else if (klawisz.Key is ConsoleKey.D3 or ConsoleKey.Escape or ConsoleKey.NumPad3)
+            {
+                Console.Clear();
+                Main();
+            }
+            
+        }
+
+        static void ObwódABC()
+        {
+            Console.WriteLine("Podaj długość boku a: ");
+            var isLenghtA = true;
+            var lengthA = 0.0;
+            do
+            {
+                var a = Console.ReadLine();
+                isLenghtA = TryParse(a, out lengthA);
+                if (!isLenghtA)
+                {
+                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                }
+            } while (!isLenghtA);
+
+            Console.WriteLine("Podaj długośc boku b: ");
+            var isLenghtB = true;
+            var lenghtB = 0.0;
+            do
+            {
+                var b = Console.ReadLine();
+                isLenghtB = TryParse(b, out lenghtB);
+                if (!isLenghtB)
+                {
+                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                }
+            } while (!isLenghtB);
+
+            Console.WriteLine("Podaj długośc boku c: ");
+            var isLenghtC = true;
+            var lenghtC = 0.0;
+            do
+            {
+                var c = Console.ReadLine();
+                isLenghtC = TryParse(c, out lenghtC);
+                
+                if (!isLenghtC)
+                {
+                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                }
+            } while (!isLenghtC);
+
+
+            if (isLenghtA && isLenghtB && isLenghtC )
+            {
+                Console.WriteLine("Obwód trapezu wynosi " + ((lengthA + lenghtB) + lenghtC * 2) + "cm");
+            }
+            else
+                Console.WriteLine("Nie prawidłowy ciąg znaków");
+
+            Console.ReadLine();
 
 
         }
+
+
+    }
+
+    public static void PoleAbh()
+    {
+        Console.WriteLine("Podaj długość boku a: ");
+        var isLenghtA = true;
+        var lengthA = 0.0;
+        do
+        {
+            var a = Console.ReadLine();
+            isLenghtA = TryParse(a, out lengthA);
+            if (!isLenghtA)
+            {
+                Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+            }
+        } while (!isLenghtA);
+
+        Console.WriteLine("Podaj długośc boku b: ");
+        var isLenghtB = true;
+        var lenghtB = 0.0;
+        do
+        {
+            var b = Console.ReadLine();
+            isLenghtB = TryParse(b, out lenghtB);
+            if (!isLenghtB)
+            {
+                Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+            }
+        } while (!isLenghtB);
+
+        Console.WriteLine("Podaj wysokość Trapezu: ");
+        var isLenghtH = true;
+        var lenghtH = 0.0;
+        do
+        {
+            var b = Console.ReadLine();
+            isLenghtH = TryParse(b, out lenghtH);
+            if (!isLenghtH)
+            {
+                Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+            }
+        } while (!isLenghtH);
+
+
+
+
+        if (isLenghtA && isLenghtB && isLenghtH)
+        {
+            Console.OutputEncoding = Encoding.Unicode;
+            Console.WriteLine("Pole Trapezu wynosi " + ((lengthA + lenghtH) * lenghtH) / 2 + "cm\xB2");
+        }
+        else
+            Console.WriteLine("Nieprawidłowy ciąg znaków");
+
+        Console.ReadLine();
     }
 }
