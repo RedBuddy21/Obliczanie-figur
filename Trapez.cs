@@ -56,7 +56,7 @@ namespace Obliczanie_figur
             if (isLenghtA && isLenghtB && isLenghtH)
             {
                 Console.OutputEncoding = Encoding.Unicode;
-                Console.WriteLine("Pole Trapezu wynosi " + ((lengthA + lenghtH) * lenghtH) / 2 + "cm\xB2");
+                Console.WriteLine("Pole Trapezu wynosi " + Funkcje.PoleTrapez(lengthA, lenghtB, lenghtH) + "cm\xB2");
             }
             else
                 Console.WriteLine("Nieprawidłowy ciąg znaków");
@@ -109,7 +109,7 @@ namespace Obliczanie_figur
 
             if (isLenghtA && isLenghtB && isLenghtC)
             {
-                Console.WriteLine("Obwód trapezu wynosi " + ((lengthA + lenghtB) + lenghtC * 2) + "cm");
+                Console.WriteLine("Obwód trapezu wynosi " + Funkcje.ObwodTrapez(lengthA, lenghtB, lenghtC) + "cm");
             }
             else
                 Console.WriteLine("Nie prawidłowy ciąg znaków");

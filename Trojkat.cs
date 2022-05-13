@@ -43,7 +43,8 @@ namespace Obliczanie_figur
             if (isLenghtA && isLenghtH)
             {
                 Console.OutputEncoding = Encoding.Unicode;
-                Console.WriteLine("Pole wynosi " + (lengthA * lenghtH) / 2 + "cm\xB2");
+                Console.WriteLine("Pole wynosi " + Funkcje.PoleTrojkant(lengthA, lenghtH)+ "cm\xB2");
+                //Funkcje.PoleTrojkant(lengthA, lenghtH);
             }
             else
                 Console.WriteLine("Nie prawidłowy ciag znaków");
@@ -96,7 +97,7 @@ namespace Obliczanie_figur
 
             if (isLenghtA && isLenghtB && isLenghtC)
             {
-                Console.WriteLine("Obwód Trójkąta wynosi: " + (lenghtC + lenghtB + lengthA) + "cm");
+                Console.WriteLine("Obwód Trójkąta wynosi: " + Funkcje.ObwodTrojkant(lengthA, lenghtB, lenghtC) + "cm");
             }
             else
                 Console.WriteLine("Nie prawidłowy ciąg znaków");

@@ -9,54 +9,67 @@ namespace Obliczanie_figur
 {
     static  class Funkcje
     {
-        public static void PoleTrojkant()
+        public static double PoleTrojkant(double lenghtA,double lenghtH)
         {
+            double wynik = (lenghtA * lenghtH) / 2;
+            return wynik;
+        }
         
-        }
 
-        public static void ObwodTrojkant()
+        public static double ObwodTrojkant(double lenghtA, double lenghtB, double lenghtC)
         {
-
+            double wynik =(lenghtA + lenghtB + lenghtC );
+            return wynik;
         }
 
-        public static void PoleKwadrat()
+        public static double PoleKwadrat(double lenghtA)
         {
-
+            double wynik =(lenghtA * lenghtA);
+            return wynik;
         }
 
-        public static void ObwodKwadrat()
+        public static double ObwodKwadrat(double lenghtA)
         {
-
+            double wynik =(lenghtA*4);
+            return wynik;
         }
 
-        public static void PoleProstakant()
+        public static double PoleProstakant(double lenghtA, double lenghtB)
         {
-
+            double wynik = (lenghtA * lenghtB);
+            return wynik;
         }
 
-        public static void ObwodProstakant()
+        public static double ObwodProstakant(double lenghtA, double lenghtB)
         {
-
+            double wynik = ((lenghtA*2)+(lenghtB*2));
+            return wynik;
         }
 
-        public static void PoleKolo()
+        public static double PoleKolo(double lengthR)
         {
-
+            double wynik = (lengthR * 3.14);
+            return wynik;
         }
 
-        public static void ObwodKolo()
+        public static double ObwodKolo(double lengthR)
         {
-
+            double wynik = (lengthR * 2 * 3.14);
+            return wynik;
         }
 
-        public static void PoleTrapez()
+        public static double PoleTrapez(double lengthA,double lenghtB, double lenghtH)
         {
-
+            double wynik = (((lengthA + lenghtB) * lenghtH) / 2);
+            return wynik;
         }
 
-        public static void ObwodTrapez()
+        public static double ObwodTrapez(double lengthA, double lenghtB, double lenghtC)
         {
-
+            double wynik = (((lengthA + lenghtB) + lenghtC * 2));
+            return wynik;
         }
+
+       
     }
 }

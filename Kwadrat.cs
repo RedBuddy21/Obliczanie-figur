@@ -27,7 +27,7 @@ namespace Obliczanie_figur
             if (isLenghtA)
             {
                 Console.OutputEncoding = Encoding.Unicode;
-                Console.WriteLine("Pole kwadratu wynosi " + lengthA * lengthA + "cm\xB2");
+                Console.WriteLine("Pole kwadratu wynosi " + Funkcje.PoleKwadrat(lengthA) + "cm\xB2");
             }
             else
                 Console.WriteLine("Nie prawidłowy ciąg znaków");
@@ -52,7 +52,7 @@ namespace Obliczanie_figur
 
             if (isLenghtA)
             {
-                Console.WriteLine("Obwód kwadratu wynosi " + lengthA * 4 + "cm");
+                Console.WriteLine("Obwód kwadratu wynosi " + Funkcje.ObwodKwadrat(lengthA) + "cm");
             }
             else
                 Console.WriteLine("Nie prawidłowy ciąg znaków");

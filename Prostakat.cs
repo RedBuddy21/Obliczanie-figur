@@ -40,7 +40,7 @@ namespace Obliczanie_figur
             if (isLenghtA && isLenghtB)
             {
                 Console.OutputEncoding = Encoding.Unicode;
-                Console.WriteLine("Pole porostokątu wynosi " + lengthA * lenghtB + "cm\xB2");
+                Console.WriteLine("Pole porostokątu wynosi " + Funkcje.PoleProstakant(lengthA, lenghtB) + "cm\xB2");
             }
             else
                 Console.WriteLine("Nie prawidłowy ciąg znaków");
@@ -79,7 +79,7 @@ namespace Obliczanie_figur
 
             if (isLenghtA && isLenghtB)
             {
-                Console.WriteLine("Obwód prostokatu wynowi " + (lengthA + lengthA + lenghtB + lenghtB) + "cm");
+                Console.WriteLine("Obwód prostokatu wynowi " + Funkcje.ObwodProstakant(lengthA, lenghtB) + "cm");
             }
             else
                 Console.WriteLine("Nie prawidłowy ciąg znaków");

@@ -27,7 +27,7 @@ namespace Obliczanie_figur
             if (isLenghtR)
             {
                 Console.OutputEncoding = Encoding.Unicode;
-                Console.WriteLine("Pole koła wynosi " + 3.14 * lengthR + "cm\xB2");
+                Console.WriteLine("Pole koła wynosi " + Funkcje.PoleKolo(lengthR) + "cm\xB2");
             }
             else
                 Console.WriteLine("Nie prawidłowy ciąg znaków");
@@ -52,7 +52,7 @@ namespace Obliczanie_figur
 
             if (isLenghtR)
             {
-                Console.WriteLine("Obwód Trójkąta wynosi: " + 2 * 3.14 * lengthR + "cm");
+                Console.WriteLine("Obwód Trójkąta wynosi: " + Funkcje.ObwodKolo(lengthR) + "cm");
             }
             else
                 Console.WriteLine("Nie prawidłowy ciąg znaków");
