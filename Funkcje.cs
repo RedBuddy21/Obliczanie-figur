@@ -11,63 +11,54 @@ namespace Obliczanie_figur
     {
         public static double PoleTrojkant(double lenghtA,double lenghtH)
         {
-            double wynik = (lenghtA * lenghtH) / 2;
-            return wynik;
+            return (lenghtA * lenghtH) / 2;
         }
         
 
         public static double ObwodTrojkant(double lenghtA, double lenghtB, double lenghtC)
         {
-            double wynik =(lenghtA + lenghtB + lenghtC );
-            return wynik;
+            return (lenghtA + lenghtB + lenghtC);
         }
 
         public static double PoleKwadrat(double lenghtA)
         {
-            double wynik =(lenghtA * lenghtA);
-            return wynik;
+            return (lenghtA * lenghtA);
         }
 
         public static double ObwodKwadrat(double lenghtA)
         {
-            double wynik =(lenghtA*4);
-            return wynik;
+            return (lenghtA * 4);
         }
 
         public static double PoleProstakant(double lenghtA, double lenghtB)
         {
-            double wynik = (lenghtA * lenghtB);
-            return wynik;
+            
+            return (lenghtA * lenghtB);
         }
 
         public static double ObwodProstakant(double lenghtA, double lenghtB)
         {
-            double wynik = ((lenghtA*2)+(lenghtB*2));
-            return wynik;
+            return ((lenghtA * 2) + (lenghtB * 2));
         }
 
         public static double PoleKolo(double lengthR)
         {
-            double wynik = (lengthR * 3.14);
-            return wynik;
+            return ((lengthR * lengthR)*3.14);
         }
 
         public static double ObwodKolo(double lengthR)
         {
-            double wynik = (lengthR * 2 * 3.14);
-            return wynik;
+            return (lengthR * 2 * 3.14); ;
         }
 
         public static double PoleTrapez(double lengthA,double lenghtB, double lenghtH)
         {
-            double wynik = (((lengthA + lenghtB) * lenghtH) / 2);
-            return wynik;
+            return (((lengthA + lenghtB) * lenghtH) / 2);
         }
 
         public static double ObwodTrapez(double lengthA, double lenghtB, double lenghtC)
         {
-            double wynik = (((lengthA + lenghtB) + lenghtC * 2));
-            return wynik;
+            return (((lengthA + lenghtB) + lenghtC * 2));
         }
 
        

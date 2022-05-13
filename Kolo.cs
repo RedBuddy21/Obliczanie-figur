@@ -11,7 +11,7 @@ namespace Obliczanie_figur
     {
         public static void StartPoleKolo()
         {
-            Console.WriteLine("Podaj długość boku a: ");
+            Console.WriteLine("Podaj długość promienia R: ");
             var isLenghtR = true;
             var lengthR = 0.0;
             do
@@ -37,7 +37,7 @@ namespace Obliczanie_figur
 
         public static void StartObwodKolo()
         {
-            Console.WriteLine("Podaj długość boku a: ");
+            Console.WriteLine("Podaj długość promienia R: ");
             var isLenghtR = true;
             var lengthR = 0.0;
             do
