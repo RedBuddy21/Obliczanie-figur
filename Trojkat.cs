@@ -22,7 +22,7 @@ namespace Obliczanie_figur
                 isLenghtA = TryParse(a, out lengthA);
                 if (!isLenghtA)
                 {
-                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                    Funkcje.niepoprawnie();
                 }
             } while (!isLenghtA);
 
@@ -36,7 +36,7 @@ namespace Obliczanie_figur
                 isLenghtH = TryParse(b, out lenghtH);
                 if (!isLenghtH)
                 {
-                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                    Funkcje.niepoprawnie();
                 }
             } while (!isLenghtH);
 
@@ -64,7 +64,7 @@ namespace Obliczanie_figur
                 isLenghtA = TryParse(a, out lengthA);
                 if (!isLenghtA)
                 {
-                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                    Funkcje.niepoprawnie();
                 }
             } while (!isLenghtA);
 
@@ -77,7 +77,7 @@ namespace Obliczanie_figur
                 isLenghtB = TryParse(b, out lenghtB);
                 if (!isLenghtB)
                 {
-                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                    Funkcje.niepoprawnie();
                 }
             } while (!isLenghtB);
 
@@ -91,7 +91,7 @@ namespace Obliczanie_figur
 
                 if (!isLenghtC)
                 {
-                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                    Funkcje.niepoprawnie();
                 }
             } while (!isLenghtC);
 

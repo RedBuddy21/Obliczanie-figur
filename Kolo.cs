@@ -20,7 +20,7 @@ namespace Obliczanie_figur
                 isLenghtR = TryParse(a, out lengthR);
                 if (!isLenghtR)
                 {
-                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                    Funkcje.niepoprawnie();
                 }
             } while (!isLenghtR);
 
@@ -46,7 +46,7 @@ namespace Obliczanie_figur
                 isLenghtR = TryParse(a, out lengthR);
                 if (!isLenghtR)
                 {
-                    Console.WriteLine("Nie prawidłowy ciąg znaków! Podaj prawidłową wartość!");
+                    Funkcje.niepoprawnie();
                 }
             } while (!isLenghtR);
 
