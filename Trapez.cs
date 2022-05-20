@@ -12,109 +12,34 @@ namespace Obliczanie_figur
         public static void StartPoleTrapez()
         {
             Console.WriteLine("Podaj długość boku a: ");
-            var isLenghtA = true;
-            var lengthA = 0.0;
-            do
-            {
-                var a = Console.ReadLine();
-                isLenghtA = TryParse(a, out lengthA);
-                if (!isLenghtA)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtA);
+            Funkcje.BOKA();
 
             Console.WriteLine("Podaj długośc boku b: ");
-            var isLenghtB = true;
-            var lenghtB = 0.0;
-            do
-            {
-                var b = Console.ReadLine();
-                isLenghtB = TryParse(b, out lenghtB);
-                if (!isLenghtB)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtB);
+            Funkcje.BOKB();
 
             Console.WriteLine("Podaj wysokość Trapezu: ");
-            var isLenghtH = true;
-            var lenghtH = 0.0;
-            do
-            {
-                var b = Console.ReadLine();
-                isLenghtH = TryParse(b, out lenghtH);
-                if (!isLenghtH)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtH);
+            Funkcje.BOKH();
 
-
-
-
-            if (isLenghtA && isLenghtB && isLenghtH)
-            {
                 Console.OutputEncoding = Encoding.Unicode;
-                Console.WriteLine("Pole Trapezu wynosi " + Funkcje.PoleTrapez(lengthA, lenghtB, lenghtH) + "cm\xB2");
-            }
-            else
-                Console.WriteLine("Nieprawidłowy ciąg znaków");
+                Console.WriteLine("Pole Trapezu wynosi " + Funkcje.PoleTrapez(Funkcje.LengthA, Funkcje.LenghtB, Funkcje.LenghtH) + "cm\xB2");
 
-            Console.ReadLine();
+                Console.ReadLine();
         }
 
         public static void StartObwodTrapez()
         {
             Console.WriteLine("Podaj długość boku a: ");
-            var isLenghtA = true;
-            var lengthA = 0.0;
-            do
-            {
-                var a = Console.ReadLine();
-                isLenghtA = TryParse(a, out lengthA);
-                if (!isLenghtA)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtA);
+            Funkcje.BOKA();
 
             Console.WriteLine("Podaj długośc boku b: ");
-            var isLenghtB = true;
-            var lenghtB = 0.0;
-            do
-            {
-                var b = Console.ReadLine();
-                isLenghtB = TryParse(b, out lenghtB);
-                if (!isLenghtB)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtB);
+            Funkcje.BOKB();
 
             Console.WriteLine("Podaj długośc boku c: ");
-            var isLenghtC = true;
-            var lenghtC = 0.0;
-            do
-            {
-                var c = Console.ReadLine();
-                isLenghtC = TryParse(c, out lenghtC);
+            Funkcje.BOKC();
 
-                if (!isLenghtC)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtC);
+                Console.WriteLine("Obwód trapezu wynosi " + Funkcje.ObwodTrapez(Funkcje.LengthA, Funkcje.LenghtB, Funkcje.LenghtC) + "cm");
 
-
-            if (isLenghtA && isLenghtB && isLenghtC)
-            {
-                Console.WriteLine("Obwód trapezu wynosi " + Funkcje.ObwodTrapez(lengthA, lenghtB, lenghtC) + "cm");
-            }
-            else
-                Console.WriteLine("Nie prawidłowy ciąg znaków");
-
-            Console.ReadLine();
+                Console.ReadLine();
         }
     }
 }

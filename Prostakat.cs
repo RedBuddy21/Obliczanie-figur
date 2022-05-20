@@ -12,79 +12,29 @@ namespace Obliczanie_figur
         public static void StartPoleProstakat()
         {
             Console.WriteLine("Podaj długość boku a: ");
-            var isLenghtA = true;
-            var lengthA = 0.0;
-            do
-            {
-                var a = Console.ReadLine();
-                isLenghtA = TryParse(a, out lengthA);
-                if (!isLenghtA)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtA);
+            Funkcje.BOKA();
 
             Console.WriteLine("Podaj długośc boku b: ");
-            var isLenghtB = true;
-            var lenghtB = 0.0;
-            do
-            {
-                var b = Console.ReadLine();
-                isLenghtB = TryParse(b, out lenghtB);
-                if (!isLenghtB)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtB);
+            Funkcje.BOKB();
 
-            if (isLenghtA && isLenghtB)
-            {
                 Console.OutputEncoding = Encoding.Unicode;
-                Console.WriteLine("Pole porostokątu wynosi " + Funkcje.PoleProstakant(lengthA, lenghtB) + "cm\xB2");
-            }
-            else
-                Console.WriteLine("Nie prawidłowy ciąg znaków");
+                Console.WriteLine("Pole porostokątu wynosi " + Funkcje.PoleProstakant(Funkcje.LengthA, Funkcje.LenghtB) + "cm\xB2");
 
 
-            Console.ReadLine();
+                Console.ReadLine();
         }
 
         public static void StartObwodProstakat()
         {
             Console.WriteLine("Podaj długość boku a: ");
-            var isLenghtA = true;
-            var lengthA = 0.0;
-            do
-            {
-                var a = Console.ReadLine();
-                isLenghtA = TryParse(a, out lengthA);
-                if (!isLenghtA)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtA);
+            Funkcje.BOKA();
 
             Console.WriteLine("Podaj długośc boku b: ");
-            var isLenghtB = true;
-            var lenghtB = 0.0;
-            do
-            {
-                var b = Console.ReadLine();
-                isLenghtB = TryParse(b, out lenghtB);
-                if (!isLenghtB)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtB);
+            Funkcje.BOKB();
 
-            if (isLenghtA && isLenghtB)
-            {
-                Console.WriteLine("Obwód prostokatu wynowi " + Funkcje.ObwodProstakant(lengthA, lenghtB) + "cm");
-            }
-            else
-                Console.WriteLine("Nie prawidłowy ciąg znaków");
+            Console.WriteLine("Obwód prostokatu wynowi " + Funkcje.ObwodProstakant(Funkcje.LengthA, Funkcje.LenghtB) + "cm");
 
-            Console.ReadLine();
+                Console.ReadLine();
         }
     }
 }

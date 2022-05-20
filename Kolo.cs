@@ -12,52 +12,22 @@ namespace Obliczanie_figur
         public static void StartPoleKolo()
         {
             Console.WriteLine("Podaj długość promienia R: ");
-            var isLenghtR = true;
-            var lengthR = 0.0;
-            do
-            {
-                var a = Console.ReadLine();
-                isLenghtR = TryParse(a, out lengthR);
-                if (!isLenghtR)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtR);
+            Funkcje.BOKR();
 
-            if (isLenghtR)
-            {
                 Console.OutputEncoding = Encoding.Unicode;
-                Console.WriteLine("Pole koła wynosi " + Funkcje.PoleKolo(lengthR) + "cm\xB2");
-            }
-            else
-                Console.WriteLine("Nie prawidłowy ciąg znaków");
+                Console.WriteLine("Pole koła wynosi " + Funkcje.PoleKolo(Funkcje.LenghtR) + "cm\xB2");
 
-            Console.ReadLine();
+                Console.ReadLine();
         }
 
         public static void StartObwodKolo()
         {
             Console.WriteLine("Podaj długość promienia R: ");
-            var isLenghtR = true;
-            var lengthR = 0.0;
-            do
-            {
-                var a = Console.ReadLine();
-                isLenghtR = TryParse(a, out lengthR);
-                if (!isLenghtR)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtR);
+            Funkcje.BOKR();
 
-            if (isLenghtR)
-            {
-                Console.WriteLine("Obwód Trójkąta wynosi: " + Funkcje.ObwodKolo(lengthR) + "cm");
-            }
-            else
-                Console.WriteLine("Nie prawidłowy ciąg znaków");
+                Console.WriteLine("Obwód Trójkąta wynosi: " + Funkcje.ObwodKolo(Funkcje.LenghtR) + "cm");
 
-            Console.ReadLine();
+                Console.ReadLine();
 
         }
 

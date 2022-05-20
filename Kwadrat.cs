@@ -12,51 +12,21 @@ namespace Obliczanie_figur
         public static void StartPoleKwadrat()
         {
             Console.WriteLine("Podaj długość boku a: ");
-            var isLenghtA = true;
-            var lengthA = 0.0;
-            do
-            {
-                var a = Console.ReadLine();
-                isLenghtA = TryParse(a, out lengthA);
-                if (!isLenghtA)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtA);
+            Funkcje.BOKA();
 
-            if (isLenghtA)
-            {
                 Console.OutputEncoding = Encoding.Unicode;
-                Console.WriteLine("Pole kwadratu wynosi " + Funkcje.PoleKwadrat(lengthA) + "cm\xB2");
-            }
-            else
-                Console.WriteLine("Nie prawidłowy ciąg znaków");
-
+                Console.WriteLine("Pole kwadratu wynosi " + Funkcje.PoleKwadrat(Funkcje.LengthA) + "cm\xB2");
+                
             Console.ReadLine();
         }
 
         public static void StartObwodKwadrat()
         {
             Console.WriteLine("Podaj długość boku a: ");
-            var isLenghtA = true;
-            var lengthA = 0.0;
-            do
-            {
-                var a = Console.ReadLine();
-                isLenghtA = TryParse(a, out lengthA);
-                if (!isLenghtA)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtA);
+            Funkcje.BOKA();
 
-            if (isLenghtA)
-            {
-                Console.WriteLine("Obwód kwadratu wynosi " + Funkcje.ObwodKwadrat(lengthA) + "cm");
-            }
-            else
-                Console.WriteLine("Nie prawidłowy ciąg znaków");
-
+                Console.WriteLine("Obwód kwadratu wynosi " + Funkcje.ObwodKwadrat(Funkcje.LengthA) + "cm");
+                
             Console.ReadLine();
         }
     }

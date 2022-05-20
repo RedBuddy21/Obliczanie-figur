@@ -14,41 +14,14 @@ namespace Obliczanie_figur
             Console.Title = "Oblicznie Figur";
 
             Console.WriteLine("Podaj długość boku a: ");
-            var isLenghtA = true;
-            var lengthA = 0.0;
-            do
-            {
-                var a = Console.ReadLine();
-                isLenghtA = TryParse(a, out lengthA);
-                if (!isLenghtA)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtA);
-
+            Funkcje.BOKA();
 
             Console.WriteLine("Podaj wysokość Trójkąta: ");
-            var isLenghtH = true;
-            var lenghtH = 0.0;
-            do
-            {
-                var b = Console.ReadLine();
-                isLenghtH = TryParse(b, out lenghtH);
-                if (!isLenghtH)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtH);
+            Funkcje.BOKH();
 
-            if (isLenghtA && isLenghtH)
-            {
-                Console.OutputEncoding = Encoding.Unicode;
-                Console.WriteLine("Pole wynosi " + Funkcje.PoleTrojkant(lengthA, lenghtH)+ "cm\xB2");
-                //Funkcje.PoleTrojkant(lengthA, lenghtH);
-            }
-            else
-                Console.WriteLine("Nie prawidłowy ciag znaków");
-
+            Console.OutputEncoding = Encoding.Unicode;
+            Console.WriteLine("Pole trójkąta wynosi "+Funkcje.PoleTrojkant(Funkcje.LengthA, Funkcje.LenghtH)+"cm\xB2");
+            
 
             Console.ReadLine();
         }
@@ -56,53 +29,17 @@ namespace Obliczanie_figur
         public static void StartObwodTajkat()
         {
             Console.WriteLine("Podaj długość boku a: ");
-            var isLenghtA = true;
-            var lengthA = 0.0;
-            do
-            {
-                var a = Console.ReadLine();
-                isLenghtA = TryParse(a, out lengthA);
-                if (!isLenghtA)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtA);
+            Funkcje.BOKA();
 
             Console.WriteLine("Podaj długośc boku b: ");
-            var isLenghtB = true;
-            var lenghtB = 0.0;
-            do
-            {
-                var b = Console.ReadLine();
-                isLenghtB = TryParse(b, out lenghtB);
-                if (!isLenghtB)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtB);
+            Funkcje.BOKB();
 
             Console.WriteLine("Podaj długośc boku c: ");
-            var isLenghtC = true;
-            var lenghtC = 0.0;
-            do
-            {
-                var c = Console.ReadLine();
-                isLenghtC = TryParse(c, out lenghtC);
+            Funkcje.BOKC();
 
-                if (!isLenghtC)
-                {
-                    Funkcje.niepoprawnie();
-                }
-            } while (!isLenghtC);
+                Console.WriteLine("Obwód Trójkąta wynosi: " + Funkcje.ObwodTrojkant(Funkcje.LengthA, Funkcje.LenghtB, Funkcje.LenghtC) + "cm");
 
-            if (isLenghtA && isLenghtB && isLenghtC)
-            {
-                Console.WriteLine("Obwód Trójkąta wynosi: " + Funkcje.ObwodTrojkant(lengthA, lenghtB, lenghtC) + "cm");
-            }
-            else
-                Console.WriteLine("Nie prawidłowy ciąg znaków");
-
-            Console.ReadLine();
+                Console.ReadLine();
         }
     }
 }
