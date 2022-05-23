@@ -13,14 +13,12 @@ namespace Obliczanie_figur
         {
             Console.Title = "Oblicznie Figur";
 
-            Console.WriteLine("Podaj długość boku a: ");
-            Funkcje.BOKA();
+            var boka = Funkcje.BOK("Podaj długość boku a: ");
+            var bokh = Funkcje.BOK("Podaj wysokość trójkąta: ");
 
-            Console.WriteLine("Podaj wysokość Trójkąta: ");
-            Funkcje.BOKH();
 
             Console.OutputEncoding = Encoding.Unicode;
-            Console.WriteLine("Pole trójkąta wynosi "+Funkcje.PoleTrojkant(Funkcje.LengthA, Funkcje.LenghtH)+"cm\xB2");
+            Console.WriteLine("Pole trójkąta wynosi "+Funkcje.PoleTrojkant(boka, bokh)+"cm\xB2");
             
 
             Console.ReadLine();
@@ -28,16 +26,11 @@ namespace Obliczanie_figur
 
         public static void StartObwodTajkat()
         {
-            Console.WriteLine("Podaj długość boku a: ");
-            Funkcje.BOKA();
+            var boka = Funkcje.BOK("Podaj długość boku a: ");
+            var bokb = Funkcje.BOK("Podaj długośc boku b: ");
+            var bokc = Funkcje.BOK("Podaj długośc boku c: ");
 
-            Console.WriteLine("Podaj długośc boku b: ");
-            Funkcje.BOKB();
-
-            Console.WriteLine("Podaj długośc boku c: ");
-            Funkcje.BOKC();
-
-                Console.WriteLine("Obwód Trójkąta wynosi: " + Funkcje.ObwodTrojkant(Funkcje.LengthA, Funkcje.LenghtB, Funkcje.LenghtC) + "cm");
+                Console.WriteLine("Obwód Trójkąta wynosi: " + Funkcje.ObwodTrojkant(boka,bokb,bokc) + "cm");
 
                 Console.ReadLine();
         }

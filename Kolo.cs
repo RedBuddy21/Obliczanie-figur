@@ -11,21 +11,19 @@ namespace Obliczanie_figur
     {
         public static void StartPoleKolo()
         {
-            Console.WriteLine("Podaj długość promienia R: ");
-            Funkcje.BOKR();
+            var bokr = Funkcje.BOK("Podaj długość boku a: ");
 
-                Console.OutputEncoding = Encoding.Unicode;
-                Console.WriteLine("Pole koła wynosi " + Funkcje.PoleKolo(Funkcje.LenghtR) + "cm\xB2");
+            Console.OutputEncoding = Encoding.Unicode;
+                Console.WriteLine("Pole koła wynosi " + Funkcje.PoleKolo(bokr) + "cm\xB2");
 
                 Console.ReadLine();
         }
 
         public static void StartObwodKolo()
         {
-            Console.WriteLine("Podaj długość promienia R: ");
-            Funkcje.BOKR();
+            var bokr = Funkcje.BOK("Podaj długość boku a: ");
 
-                Console.WriteLine("Obwód Trójkąta wynosi: " + Funkcje.ObwodKolo(Funkcje.LenghtR) + "cm");
+            Console.WriteLine("Obwód Trójkąta wynosi: " + Funkcje.ObwodKolo(bokr) + "cm");
 
                 Console.ReadLine();
 

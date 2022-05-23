@@ -11,14 +11,11 @@ namespace Obliczanie_figur
     {
         public static void StartPoleProstakat()
         {
-            Console.WriteLine("Podaj długość boku a: ");
-            Funkcje.BOKA();
+            var boka = Funkcje.BOK("Podaj długość boku a: ");
+            var bokb = Funkcje.BOK("Podaj długośc boku b: ");
 
-            Console.WriteLine("Podaj długośc boku b: ");
-            Funkcje.BOKB();
-
-                Console.OutputEncoding = Encoding.Unicode;
-                Console.WriteLine("Pole porostokątu wynosi " + Funkcje.PoleProstakant(Funkcje.LengthA, Funkcje.LenghtB) + "cm\xB2");
+            Console.OutputEncoding = Encoding.Unicode;
+                Console.WriteLine("Pole porostokątu wynosi " + Funkcje.PoleProstakant(boka, bokb) + "cm\xB2");
 
 
                 Console.ReadLine();
@@ -26,13 +23,10 @@ namespace Obliczanie_figur
 
         public static void StartObwodProstakat()
         {
-            Console.WriteLine("Podaj długość boku a: ");
-            Funkcje.BOKA();
+            var boka = Funkcje.BOK("Podaj długość boku a: ");
+            var bokb = Funkcje.BOK("Podaj długośc boku b: ");
 
-            Console.WriteLine("Podaj długośc boku b: ");
-            Funkcje.BOKB();
-
-            Console.WriteLine("Obwód prostokatu wynowi " + Funkcje.ObwodProstakant(Funkcje.LengthA, Funkcje.LenghtB) + "cm");
+            Console.WriteLine("Obwód prostokatu wynowi " + Funkcje.ObwodProstakant(boka, bokb) + "cm");
 
                 Console.ReadLine();
         }

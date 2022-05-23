@@ -11,21 +11,19 @@ namespace Obliczanie_figur
     {
         public static void StartPoleKwadrat()
         {
-            Console.WriteLine("Podaj długość boku a: ");
-            Funkcje.BOKA();
+            var boka = Funkcje.BOK("Podaj długość boku a: ");
 
-                Console.OutputEncoding = Encoding.Unicode;
-                Console.WriteLine("Pole kwadratu wynosi " + Funkcje.PoleKwadrat(Funkcje.LengthA) + "cm\xB2");
+            Console.OutputEncoding = Encoding.Unicode;
+                Console.WriteLine("Pole kwadratu wynosi " + Funkcje.PoleKwadrat(boka) + "cm\xB2");
                 
             Console.ReadLine();
         }
 
         public static void StartObwodKwadrat()
         {
-            Console.WriteLine("Podaj długość boku a: ");
-            Funkcje.BOKA();
+            var boka = Funkcje.BOK("Podaj długość boku a: ");
 
-                Console.WriteLine("Obwód kwadratu wynosi " + Funkcje.ObwodKwadrat(Funkcje.LengthA) + "cm");
+            Console.WriteLine("Obwód kwadratu wynosi " + Funkcje.ObwodKwadrat(boka) + "cm");
                 
             Console.ReadLine();
         }

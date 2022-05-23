@@ -11,33 +11,23 @@ namespace Obliczanie_figur
     {
         public static void StartPoleTrapez()
         {
-            Console.WriteLine("Podaj długość boku a: ");
-            Funkcje.BOKA();
-
-            Console.WriteLine("Podaj długośc boku b: ");
-            Funkcje.BOKB();
-
-            Console.WriteLine("Podaj wysokość Trapezu: ");
-            Funkcje.BOKH();
+            var boka = Funkcje.BOK("Podaj długość boku a: ");
+            var bokb = Funkcje.BOK("Podaj długośc boku b: ");
+            var bokh = Funkcje.BOK("Podaj długośc boku c: "); ;
 
                 Console.OutputEncoding = Encoding.Unicode;
-                Console.WriteLine("Pole Trapezu wynosi " + Funkcje.PoleTrapez(Funkcje.LengthA, Funkcje.LenghtB, Funkcje.LenghtH) + "cm\xB2");
+                Console.WriteLine("Pole Trapezu wynosi " + Funkcje.PoleTrapez(boka,bokb,bokh) + "cm\xB2");
 
                 Console.ReadLine();
         }
 
         public static void StartObwodTrapez()
         {
-            Console.WriteLine("Podaj długość boku a: ");
-            Funkcje.BOKA();
+            var boka = Funkcje.BOK("Podaj długość boku a: ");
+            var bokb = Funkcje.BOK("Podaj długośc boku b: ");
+            var bokc = Funkcje.BOK("Podaj długośc boku c: ");
 
-            Console.WriteLine("Podaj długośc boku b: ");
-            Funkcje.BOKB();
-
-            Console.WriteLine("Podaj długośc boku c: ");
-            Funkcje.BOKC();
-
-                Console.WriteLine("Obwód trapezu wynosi " + Funkcje.ObwodTrapez(Funkcje.LengthA, Funkcje.LenghtB, Funkcje.LenghtC) + "cm");
+            Console.WriteLine("Obwód trapezu wynosi " + Funkcje.ObwodTrapez(boka,bokb, bokc) + "cm");
 
                 Console.ReadLine();
         }
